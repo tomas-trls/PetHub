@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Petemoss&display=swap');
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #98C1D9;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +11,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+#title {
+  font-family: 'Petemoss', sans-serif;
 }
