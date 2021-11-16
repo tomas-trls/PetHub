@@ -26,11 +26,6 @@ ActiveRecord::Schema.define(version: 2021_11_15_171953) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pet_id"], name: "index_bookings_on_pet_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
-  create_table "reviews", force: :cascade do |t|
-    t.text "content"
-    t.integer "rating"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "pets", force: :cascade do |t|
@@ -43,6 +38,13 @@ ActiveRecord::Schema.define(version: 2021_11_15_171953) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_pets_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
