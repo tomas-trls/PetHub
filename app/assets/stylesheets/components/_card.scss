@@ -226,6 +226,11 @@
   display: flex;
   align-items: center;
   margin: 20px;
+  transition: all .2s ease-in-out;
+}
+
+.card-product:hover {
+  transform: scale(1.1);
 }
 
 .card-product .icon-box {

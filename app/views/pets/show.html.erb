@@ -67,10 +67,18 @@
         </div>
         <div class="card-product-infos">
           <h2>Booking</h2>
-          <p>Arrange a day with <strong><%= @pet.name %></strong> here.</p>
+          <p>Arrange a day with <%= @pet.name %>
+          <strong><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            here.</a></strong>
+          </p>
         </div>
       </div>
     </div>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            </div>
+          </div>
     </div>
   </div>
 </div>
