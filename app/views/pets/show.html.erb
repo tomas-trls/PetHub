@@ -1,7 +1,7 @@
 <h1>Pet Profile</h1>
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 col-sm-12">
+    <div class="col-lg-4 col-m-6 col-sm-12">
       <div class="fancy-card-wrapper">
 
           <div class="fancy-card profile-two">
@@ -33,52 +33,52 @@
       </div>
     </div>
 
-    <div class="col-lg-6 col-sm-12">
-    <div class="pet-details-cards">
-      <div class="top-cards">
-        <div class="card-product top-card">
-          <div class="icon-box">
-            <i class="fas fa-paw fa-4x"></i>
-          </div>
-          <div class="card-product-infos">
-            <h2>General Information</h2>
-            <p><strong>Species:</strong> <%= @pet.species %></p>
-            <p><strong>Breed:</strong> <%= @pet.breed %></p>
-            <p><strong>Age:</strong> <%= @pet.age %></p>
-          </div>
-        </div>
-
-        <div class="card-product top-card">
-          <div class="icon-box">
-            <i class="far fa-user fa-4x"></i>
-          </div>
-          <div class="card-product-infos">
-            <h2>Owner Details</h2>
-            <p><strong>Name:</strong> <%= @pet.user.first_name.capitalize %> <%= @pet.user.first_name.capitalize %></p>
-            <p><strong>Email:</strong> <%= @pet.user.email %></p>
-            <p><strong>Postcode:</strong> <%= @pet.user.postcode %></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-product">
-        <div class="icon-box">
-          <i class="far fa-calendar-alt fa-4x"></i>
-        </div>
-        <div class="card-product-infos">
-          <h2>Booking</h2>
-          <p>Arrange a day with <%= @pet.name %>
-          <strong><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            here.</a></strong>
-          </p>
-        </div>
-      </div>
-    </div>
-          <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    <div class="col-lg-8 col-m-4 col-sm-12">
+      <div class="pet-details-cards">
+        <div class="top-cards">
+          <div class="card-product top-card">
+            <div class="icon-box">
+              <i class="fas fa-paw fa-4x"></i>
+            </div>
+            <div class="card-product-infos">
+              <h2>General Information</h2>
+              <p><strong>Species:</strong> <%= @pet.species %></p>
+              <p><strong>Breed:</strong> <%= @pet.breed %></p>
+              <p><strong>Age:</strong> <%= @pet.age %></p>
             </div>
           </div>
+
+          <div class="card-product top-card">
+            <div class="icon-box">
+              <i class="far fa-user fa-4x"></i>
+            </div>
+            <div class="card-product-infos">
+              <h2>Owner Details</h2>
+              <p><strong>Name:</strong> <%= @pet.user.first_name.capitalize %> <%= @pet.user.first_name.capitalize %></p>
+              <p><strong>Email:</strong> <%= @pet.user.email %></p>
+              <p><strong>Postcode:</strong> <%= @pet.user.postcode %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-product">
+          <div class="icon-box">
+            <i class="far fa-calendar-alt fa-4x"></i>
+          </div>
+          <div class="card-product-infos">
+            <h2>Booking</h2>
+            <p>Arrange a day with <%= @pet.name %>
+            <strong><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              here.</a></strong>
+            </p>
+          </div>
+        </div>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body booking-form-card">
+              This is where the booking form will show up!
+            </div>
+          </div>
+      </div>
     </div>
   </div>
 </div>
