@@ -4,8 +4,9 @@
   <div class="cards">
     <% @pets.each do |pet| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= link_to pet_path(pet) do %>
         <div class="card-trip">
-          <img src="https://source.unsplash.com/random" />
+            <img src="https://source.unsplash.com/random" />
           <div class="card-trip-infos">
             <div>
                 <h2><%= pet.name %></h2>
@@ -14,6 +15,7 @@
             <h2 class="card-trip-pricing">£99.99</h2>
           </div>
         </div>
+        <% end %>
       </div>
     <% end %>
   </div>
