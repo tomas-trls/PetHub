@@ -1,12 +1,63 @@
-<div class="container">
-  <div class="row justify-content-center" id="landing">
-    <div class="landing col-6 d-flex justify-content-center flex-column align-items-center">
-      <%= image_tag "paw" %>
-      <div class="tagline">
-        <h1>PetHub</h1>
-        <p>Share the love!</p>
+<div class="container position-relative">
+  <div class="aboutus"></div>
+  <%= link_to pets_index_path do%>
+  <div class="entrance"></div>
+  <% end %>
+  <div class="contact"></div>
+    <div class="background-building"></div>
+  <div class="clock-block">
+    <div class="clock">
+      <div class="wrap">
+        <span class="hour"></span>
+        <span class="minute"></span>
+        <span class="second"></span>
+        <span class="dot"></span>
       </div>
-      <a class="btn btn-flat" href="#">Learn More</a>
     </div>
-  </div>
 </div>
+  </div>
+<script>
+var inc = 1000;
+
+clock();
+
+function clock() {
+  const date = new Date();
+
+  const hours = ((date.getHours() + 11) % 12 + 1);
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+
+  const hour = hours * 30;
+  const minute = minutes * 6;
+  const second = seconds * 6;
+
+  document.querySelector('.hour').style.transform = `rotate(${hour}deg)`
+  document.querySelector('.minute').style.transform = `rotate(${minute}deg)`
+  document.querySelector('.second').style.transform = `rotate(${second}deg)`
+}
+
+setInterval(clock, inc);
+var inc = 1000;
+
+clock();
+
+function clock() {
+  const date = new Date();
+
+  const hours = ((date.getHours() + 11) % 12 + 1);
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+
+  const hour = hours * 30;
+  const minute = minutes * 6;
+  const second = seconds * 6;
+
+  document.querySelector('.hour').style.transform = `rotate(${hour}deg)`
+  document.querySelector('.minute').style.transform = `rotate(${minute}deg)`
+  document.querySelector('.second').style.transform = `rotate(${second}deg)`
+}
+
+setInterval(clock, inc);
+
+</script>
