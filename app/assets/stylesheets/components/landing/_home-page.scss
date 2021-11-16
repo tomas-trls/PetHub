@@ -1,0 +1,136 @@
+.background-building {
+  width:1150px;
+  background-image: url("Home-not-Signed-in.svg");
+  height: 100vh;
+}
+
+.aboutus {
+  position: absolute;
+  width: 77px;
+  height: 177.16px;
+  left: 182px;
+  top: 312px;
+
+  /* yellow */
+
+  //background: blue;
+  /* red */
+}
+
+.entrance {
+  /* entrance/index */
+
+
+  position: absolute;
+  width: 147px;
+  height: 242px;
+  left: 308px;
+  top: 337px;
+
+  /* yellow */
+
+  //background: blue;
+}
+
+.contact {
+  /* widow-2 */
+
+
+  position: absolute;
+  width: 145px;
+  height: 129px;
+  left: 490px;
+  top: 341px;
+
+  /* yellow */
+
+  //background: blue;
+  /* red */
+}
+
+//CLOCK
+
+.clock-block {
+  position: absolute;
+  top: -158px;
+  left: 816px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.clock {
+  border-radius: 100%;
+  background: #ffffff;
+  font-family: "Montserrat";
+  border: 5px solid white;
+  box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.wrap {
+  overflow: hidden;
+  position: relative;
+  width: 68px;
+  height: 68px;
+  border-radius: 100%;
+}
+
+.minute,
+.hour {
+  position: absolute;
+  height: 20px;
+  width: 2px;
+  margin: auto;
+  top: -37%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: black;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.minute {
+  position: absolute;
+  height: 20px;
+  width: 2px;
+  top: -37%;
+  left: 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  transform: rotate(90deg);
+}
+
+.second {
+  position: absolute;
+  height: 20px;
+  width: 1px;
+  margin: auto;
+  top: -37%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 4px;
+  background: #FF4B3E;
+  transform-origin: bottom center;
+  transform: rotate(180deg);
+  z-index: 1;
+}
+
+.dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 100px;
+  background: white;
+  border: 1px solid #1b1b1b;
+  border-radius: 100px;
+  margin: auto;
+  z-index: 1;
+}
