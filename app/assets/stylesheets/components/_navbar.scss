@@ -2,7 +2,7 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: #98C1D9;
+  background: $pink;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,9 +10,73 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 35px;
+}
+
+#signup-btn {
+  background-color: $red;
+  color: white;
+  border-radius: 5px;
+  &:hover {
+    color: $yellow;
+  }
+}
+
+#login-btn {
+  color: $red;
+  font-weight: 600;
+  &:hover {
+    color: $yellow;
+  }
+}
+
+.navbar-red-text {
+  color: white !important;
+}
+
+.navbar-dropdown {
+  background-color: $pink;
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid red;
+  margin-top: 10px;
 }
 
 #title {
-  font-family: 'Petemoss', sans-serif;
+  color: white;
+  font-family: $title-font;
+  font-size: 23px;
+}
+
+#profile-mobile {
+  display: none;
+}
+
+#profile-desktop {
+  display: block;
+}
+
+@media (max-width: 576px) {
+  #signup-btn {
+    background-color: transparent;
+    border-top: 1px solid gray;
+    border-radius: 0;
+  }
+
+  .navbar-lewagon .navbar-collapse {
+    margin-top: 20px;
+  }
+
+  #login-btn {
+    font-weight: 400;
+    color: white;
+  }
+
+  #profile-desktop {
+    display: none;
+  }
+
+  #profile-mobile {
+  display: block;
+}
 }
