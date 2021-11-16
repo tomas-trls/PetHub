@@ -32,25 +32,32 @@
           </div>
       </div>
     </div>
+
     <div class="col-lg-6 col-sm-12">
     <div class="pet-details-cards">
-      <div class="card-product">
-        <div class="icon-box">
-        <i class="fas fa-paw fa-4x"></i>
+      <div class="top-cards">
+        <div class="card-product top-card">
+          <div class="icon-box">
+            <i class="fas fa-paw fa-4x"></i>
+          </div>
+          <div class="card-product-infos">
+            <h2>General Information</h2>
+            <p><strong>Species:</strong> <%= @pet.species %></p>
+            <p><strong>Breed:</strong> <%= @pet.breed %></p>
+            <p><strong>Age:</strong> <%= @pet.age %></p>
+          </div>
         </div>
-        <div class="card-product-infos">
-          <h2>General Information</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-        </div>
-      </div>
 
-      <div class="card-product">
-        <div class="icon-box">
-          <i class="far fa-user fa-4x"></i>
-        </div>
-        <div class="card-product-infos">
-          <h2>Owner Details</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+        <div class="card-product top-card">
+          <div class="icon-box">
+            <i class="far fa-user fa-4x"></i>
+          </div>
+          <div class="card-product-infos">
+            <h2>Owner Details</h2>
+            <p><strong>Name:</strong> <%= @pet.user.first_name.capitalize %> <%= @pet.user.first_name.capitalize %></p>
+            <p><strong>Email:</strong> <%= @pet.user.email %></p>
+            <p><strong>Postcode:</strong> <%= @pet.user.postcode %></p>
+          </div>
         </div>
       </div>
 
@@ -60,7 +67,7 @@
         </div>
         <div class="card-product-infos">
           <h2>Booking</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+          <p>Arrange a day with <strong><%= @pet.name %></strong> here.</p>
         </div>
       </div>
     </div>

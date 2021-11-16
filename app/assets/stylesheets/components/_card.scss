@@ -4,6 +4,15 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: all .2s ease-in-out;
+}
+
+.card-category a {
+  text-decoration: none;
+}
+
+.card-trip:hover {
+  transform: scale(1.1);
 }
 
 .card-trip > img {
@@ -247,4 +256,19 @@
 .pet-details-cards {
   display: flex;
   flex-direction: column;
+}
+
+.top-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-card {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: auto;
+  .icon-box {
+    padding-left: 0;
+  }
 }
