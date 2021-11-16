@@ -4,6 +4,20 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: all .2s ease-in-out;
+  border-radius: 8px;
+}
+
+.card-category {
+  border-radius: 8px;
+}
+
+.card-category a {
+  text-decoration: none;
+}
+
+.card-trip:hover {
+  transform: scale(1.1);
 }
 
 .card-trip > img {
@@ -45,6 +59,7 @@
   width: 400px;
   height: 500px;
   position: relative;
+  margin-right: 100px;
 }
 
 .fancy-card {
@@ -154,8 +169,6 @@
   transition-delay: 0.4s;
 }
 
-/**** Personal Details ****/
-
 .details {
   position: absolute;
   bottom: 0;
@@ -217,13 +230,16 @@
   display: flex;
   align-items: center;
   margin: 20px;
+  transition: all .2s ease-in-out;
+  border-radius: 8px;
+}
+
+.card-product:hover {
+  transform: scale(1.1);
 }
 
 .card-product .icon-box {
-  // height: 100%;
-  // width: 120px;
-  // object-fit: cover;
-  padding: 8px 0 8px 16px;
+  padding: 8px 0 8px 24px;
 }
 
 .card-product h2 {
@@ -247,4 +263,29 @@
 .pet-details-cards {
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
+}
+
+.top-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: 250px;
+  .icon-box {
+    padding-left: 0;
+    padding-top: 30px;
+  }
+  .card-product-infos {
+    padding-bottom: 30px;
+  }
+}
+
+.booking-form-card {
+  border-radius: 8px;
 }
