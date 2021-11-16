@@ -4,7 +4,7 @@ class PetsController < ApplicationController
   end
 
   def index
-    @pets = Pets.all
+    @pets = Pet.all
   end
 
   private
