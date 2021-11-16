@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :set_pet, :set_user, only: [:new,:create, :destroy]
+  before_action :set_pet, :set_user, only: [:new,:create, :index, :destroy]
+
+  def index
+
+  end
 
   def new
     @booking = Booking.new
