@@ -1,6 +1,7 @@
 .background-building {
   width:1150px;
   background-image: url("Home-not-Signed-in.svg");
+  background-repeat: no-repeat;
   height: 100vh;
 }
 
@@ -51,16 +52,13 @@
 //CLOCK
 
 .clock-block {
-  position: absolute;
-  top: -158px;
-  left: 816px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
 }
 
 .clock {
+  position: relative;
+  top: -772px;
+  left: 856px;
   border-radius: 100%;
   background: #ffffff;
   font-family: "Montserrat";
@@ -82,7 +80,7 @@
   height: 20px;
   width: 2px;
   margin: auto;
-  top: -37%;
+  top: -30%;
   left: 0;
   bottom: 0;
   right: 0;
@@ -95,9 +93,9 @@
 
 .minute {
   position: absolute;
-  height: 20px;
+  height: 25px;
   width: 2px;
-  top: -37%;
+  top: -35%;
   left: 0;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   transform: rotate(90deg);
@@ -108,7 +106,7 @@
   height: 20px;
   width: 1px;
   margin: auto;
-  top: -37%;
+  top: -30%;
   left: 0;
   bottom: 0;
   right: 0;
