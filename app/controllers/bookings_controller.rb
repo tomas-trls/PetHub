@@ -1,8 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_pet, :set_user, only: [:new, :create]
-  def index
-
-  end
+  before_action :set_pet, :set_user, only: [:new,:create, :destroy]
 
   def new
     @booking = Booking.new
@@ -10,10 +7,24 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = @user
+    @booking.user = current_user
     @booking.pet = @pet
     @booking.save!
-    redirect_to booking_path
+    redirect_to pet_bookings_path
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking.update(booking)
+    redirect_to booking_path(@booking)
+  end
+
+  def destroy
+    @booking.destroy
+    redirect_to pets_path
   end
 
   private
@@ -23,7 +34,7 @@ class BookingsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 
   def booking_params
