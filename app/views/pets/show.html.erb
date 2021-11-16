@@ -1,2 +1,69 @@
-<h1>Pets#show</h1>
-<p>Find me in app/views/pets/show.html.erb</p>
+<h1>Pet Profile</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+      <div class="fancy-card-wrapper">
+
+          <div class="fancy-card profile-two">
+
+            <div class="fancy-card-image profile-img--two">
+              <img src="https://image.ibb.co/c9rY6J/profile02.jpg" alt="profile two">
+            </div>
+
+            <ul class="social-icons">
+              <li>
+                <a href="">
+                  <i class="card-icon fas fa-paw"></i>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i class="card-icon far fa-bookmark"></i>
+                </a>
+              </li>
+            </ul>
+
+            <div class="details pet">
+                <h2><%= @pet.name %>
+                  <br>
+                  <span class="pet-description"><%= @pet.description %></span>
+                </h2>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+    <div class="pet-details-cards">
+      <div class="card-product">
+        <div class="icon-box">
+        <i class="fas fa-paw fa-4x"></i>
+        </div>
+        <div class="card-product-infos">
+          <h2>General Information</h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+
+      <div class="card-product">
+        <div class="icon-box">
+          <i class="far fa-user fa-4x"></i>
+        </div>
+        <div class="card-product-infos">
+          <h2>Owner Details</h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+
+      <div class="card-product">
+        <div class="icon-box">
+          <i class="far fa-calendar-alt fa-4x"></i>
+        </div>
+        <div class="card-product-infos">
+          <h2>Booking</h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
