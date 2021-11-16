@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-
+  get "my_bookings", to: "pages#my_bookings"
+  delete "my_bookings/:id", to: "bookings#destroy"
   resources :pets, only: [:new, :create, :index, :show] do
     resources :bookings, only: [:new, :create]
   end
