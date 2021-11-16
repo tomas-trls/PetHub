@@ -1,0 +1,10 @@
+<%= render "navbar" %>
+
+<%= simple_form_for [@pet, @user, @booking]  do |f|%>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit "Submit Request", class: "btn btn-primary" %>
+<%end%>
+
+<hr>
+<%=link_to "Back to Booking", bookings_path%>
