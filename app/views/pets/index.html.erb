@@ -1,8 +1,7 @@
-<div class="index-container">
-  <h1>Pets</h1>
+<div class="container">
+  <h1 class="text-center">Pets</h1>
 </div>
-
-<div class="index-container">
+<div class="container d-flex">
   <div class="cards">
     <% @pets.each do |pet| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
@@ -27,4 +26,5 @@
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+
 </div>
