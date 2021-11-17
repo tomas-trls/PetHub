@@ -1,7 +1,10 @@
 <div class="container position-relative">
   <div class="aboutus"></div>
+  <%= link_to pets_path do%>
+  <div class="entrance"></div>
+  <% end %>
   <div class="contact"></div>
-  <% if user_signed_in? %>
+    <% if user_signed_in? %>
     <%= link_to pets_path do%>
       <div class="entrance"></div>
     <% end %>
@@ -15,7 +18,6 @@
     <% end %>
     <div class="background-building-not-sign"></div>
     <% end %>
-  </div>
   <div class="clock-block">
     <div class="clock">
       <div class="wrap">
@@ -25,6 +27,7 @@
         <span class="dot"></span>
       </div>
     </div>
+</div>
   </div>
 <script>
 var inc = 1000;
