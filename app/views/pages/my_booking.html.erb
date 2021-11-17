@@ -1,0 +1,20 @@
+<div class="container mb-2">
+  <h1 class="text-center m-2">My Booking</h1>
+
+    <div class="card p-5 col-10 mx-auto border border-warning rounded" >
+  <div class="text-center">
+  <%= cl_image_tag @booking.pet.photo.key, height: 200, width: 200, crop: :fill %>
+  <p><%= @booking.pet.name %></p>
+  </div>
+      <h2>Date</h2>
+      <span class="card-subtitle mb-2 text-muted"><%= @booking.start_date.strftime("%d-%m-%Y") %></span>
+      <span class="card-subtitle mb-2 text-muted"><%= @booking.end_date.strftime("%d-%m-%Y") %></span>
+      <hr>
+      <h2>Location</h2>
+      <hr>
+      <h3>Animal Details</h3>
+      <p class="card-text"><b>Species:</b> <%= @booking.pet.species %> <br>
+      <b>Breed:</b> <%= @booking.pet.breed %> <br>
+      <b>Age:</b> <%= @booking.pet.age %> <br>
+      <b>Description:</b> <%= @booking.pet.description %></p>
+  </div>
