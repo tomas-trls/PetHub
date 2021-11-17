@@ -5,6 +5,14 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all
+    @markers = @pets.geocoded.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { pet: pet }),
+        image_url: helpers.asset_url("redpaw.png")
+      }
+    end
   end
 
   def new
