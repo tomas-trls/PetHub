@@ -10,6 +10,12 @@
   width: 450px;
 }
 
+.index-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .cards {
   padding: 10px;
   display: grid;
