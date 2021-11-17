@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_pet, :set_user, only: [:new,:create]
 
   def index
-
+    @bookings = Booking.all
   end
 
   def new
