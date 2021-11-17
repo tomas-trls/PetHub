@@ -20,6 +20,10 @@
   transform: scale(1.1);
 }
 
+.pet-card-image {
+  object-fit: fill !important;
+}
+
 .card-trip > img {
   height: 200px;
   width: 100%;
@@ -88,9 +92,10 @@
   }
 
   .fancy-card-image img {
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: 100%;
+    background-color: white;
   }
 
   &:hover img {

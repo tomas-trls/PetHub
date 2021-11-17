@@ -1,0 +1,12 @@
+<div class="col-8 mx-auto">
+  <h1 class="mb-4">Add pet for booking</h1>
+  <%= simple_form_for(@pet) do |f|%>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :name %>
+    <%= f.input :species %>
+    <%= f.input :breed %>
+    <%= f.input :description %>
+    <%= f.input :age, as: :integer, input_html: { min: '0', step: 'any' } %>
+    <%= f.submit "Rent my pet!", class: "btn btn-primary" %>
+  <%end%>
+</div>
