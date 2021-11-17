@@ -1,43 +1,76 @@
-<div class="profile">
-<h1 class="mb-5">My Booking Requests</h1>
+<div class="container">
+  <h1>Booking Details</h1>
+  <div class="row">
+    <div class="col-lg-4 col-m-6 col-sm-12">
+      <div class="fancy-card-wrapper">
 
-  <div class="fancy-card-wrapper d-flex flex-row justify-content-between">
-    <div>
-    <div class="fancy-card-image profile-img--two">
-      <%= cl_image_tag @booking.pet.photo.key, height: 400, width: 400, crop: :fill %>
-    </div>
-    <div class="mb-2">
-      <div class="card-product booking-card" style="width: 390px; height: 5rem;">
-        <h5 class="card-title">
-            <%=@booking.pet.name %>
-        </h5>
-        <p class="card-text"><%= @booking.pet.description %></p>
+          <div class="fancy-card profile-two">
+
+            <div class="fancy-card-image profile-img--two">
+              <%= cl_image_tag @booking.pet.photo.key, height: 300, width: 400, crop: :fill %>
+            </div>
+
+            <ul class="social-icons">
+              <li>
+                <a href="">
+                  <i class="card-icon fas fa-paw"></i>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i class="card-icon far fa-bookmark"></i>
+                </a>
+              </li>
+            </ul>
+
+            <div class="details pet">
+                <h2><%= @booking.pet.name %>
+                  <br>
+                  <span class="pet-description"><%= @booking.pet.description %></span>
+                </h2>
+            </div>
+          </div>
       </div>
     </div>
-    </div>
-      <div>
-        <div class="card-product booking-card">
-            <i class="far fa-user fa-4x"></i>
-          <div class="card-product-infos">
-            <h2>Owner Details</h2>
-            <p><strong>Name:</strong> <%= @booking.pet.user.first_name.capitalize %> <%= @booking.pet.user.first_name.capitalize %></p>
-            <p><strong>Email:</strong> <%= @booking.pet.user.email %></p>
-            <p><strong>Postcode:</strong> <%= @booking.pet.user.postcode %></p>
+
+    <div class="col-lg-8 col-m-4 col-sm-12">
+      <div class="pet-details-cards">
+        <div class="top-cards">
+          <div class="card-product top-card">
+            <div class="icon-box">
+              <i class="fas fa-paw fa-4x"></i>
+            </div>
+            <div class="card-product-infos">
+              <h2>Owner Details</h2>
+                <p><strong>Name:</strong> <%= @booking.pet.user.first_name.capitalize %> <%= @booking.pet.user.first_name.capitalize %></p>
+                <p><strong>Email:</strong> <%= @booking.pet.user.email %></p>
+                <p><strong>Postcode:</strong> <%= @booking.pet.user.postcode %></p>
+            </div>
           </div>
-        </div>
-          <div class="card-product booking-card">
-            <i class="fas fa-calendar-week fa-4x"></i>
-          <div class="card-product-infos">
+
+          <div class="card-product top-card">
+            <div class="icon-box">
+              <i class="far fa-user fa-4x"></i>
+            </div>
+            <div class="card-product-infos">
             <h2>Booking Details</h2>
-            <p><strong>Date:</strong> <%= @booking.start_date.strftime("%d-%m-%Y") %> - <%= @booking.end_date.strftime("%d-%m-%Y")%></p>
-            <p><strong>Owner confirmation:</strong> <%= @booking.owner_confirmation %></p>
-            <p><strong>Sitter confirmation:</strong> <%= @booking.sitter_confirmation %></p>
+              <p><strong>Date:</strong> <%= @booking.start_date.strftime("%d-%m-%Y") %> - <%= @booking.end_date.strftime("%d-%m-%Y")%></p>
+              <p><strong>Owner confirmation:</strong> <%= @booking.owner_confirmation %></p>
+              <p><strong>Sitter confirmation:</strong> <%= @booking.sitter_confirmation %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-product">
+          <div class="icon-box">
+            <i class="far fa-calendar-alt fa-4x"></i>
+          </div>
+          <div class="card-product-infos">
+              <%= link_to "Back to bookings", my_bookings_path, class: "btn btn-primary"%>
+            </p>
           </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </div>
-  <hr>
-  <%= link_to "Back to bookings", my_bookings_path, class: "btn btn-primary"%>

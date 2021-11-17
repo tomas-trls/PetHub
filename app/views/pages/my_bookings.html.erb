@@ -2,11 +2,12 @@
   <h1 class="m-2 text-center">My Bookings</h1>
   <div class="cards">
     <% current_user.bookings.each do |booking| %>
-      <div class="card" style="width: 18rem;">
+      <div class="card-trip" style="width: 18rem;">
+      <%= cl_image_tag booking.pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
       <div class="card-body">
-      <h5 class="card-title text-center">Start Date: <%= booking.start_date.strftime("%d-%m-%Y")%></h5>
-      <h5 class="card-title text-center">End Date: <%= booking.end_date.strftime("%d-%m-%Y")%></h5>
-      <p class="card-text mt-2 text-center mb-0">Booking Request has been made for <%= booking.pet.name%></p>
+        <h2 class="card-title text-center">Start Date: <%= booking.start_date.strftime("%d-%m-%Y")%></h2>
+        <h2 class="card-title text-center">End Date: <%= booking.end_date.strftime("%d-%m-%Y")%></h2>
+        <p class="card-text mt-2 text-center mb-0">Booking request has been made for <%= booking.pet.name%></p>
       <hr>
       <div class="d-flex justify-content-around">
       <%= link_to "Edit", edit_booking_path(booking), class: "card-link text-warning " %>

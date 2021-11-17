@@ -34,12 +34,14 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: $red;
 }
 
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  color: darkgrey;
 }
 
 .card-trip .card-trip-infos {
@@ -92,7 +94,7 @@
   }
 
   .fancy-card-image img {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     height: 100%;
     background-color: white;
