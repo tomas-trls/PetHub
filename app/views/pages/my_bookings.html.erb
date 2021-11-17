@@ -1,14 +1,18 @@
 <div class="container">
-  <h1>My Bookings</h1>
+  <h1 class="m-2 text-center">My Bookings</h1>
   <div class="cards">
     <% current_user.bookings.each do |booking| %>
       <div class="card" style="width: 18rem;">
       <div class="card-body">
-      <h5 class="card-title">Start Date: <%= booking.start_date.strftime("%d-%m-%Y")%></h5>
-      <h5 class="card-title">End Date: <%= booking.end_date.strftime("%d-%m-%Y")%></h5>
-      <p class="card-text">Booking Request has been made for <%= booking.pet.name%></p>
-      <%= link_to "Edit", edit_booking_path(booking) %>
-      <%= link_to "Delete", booking_path(booking), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "text-danger"%>
+      <h5 class="card-title text-center">Start Date: <%= booking.start_date.strftime("%d-%m-%Y")%></h5>
+      <h5 class="card-title text-center">End Date: <%= booking.end_date.strftime("%d-%m-%Y")%></h5>
+      <p class="card-text mt-2 text-center mb-0">Booking Request has been made for <%= booking.pet.name%></p>
+      <hr>
+      <div class="d-flex justify-content-around">
+      <%= link_to "Edit", edit_booking_path(booking), class: "card-link text-warning " %>
+      <%= link_to "More Info", my_booking_path(booking), class: "card-link text-info" %>
+      <%= link_to "Delete", booking_path(booking), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "text-danger card-link"%>
+      </div>
       </div>
     </div>
     <% end %>
