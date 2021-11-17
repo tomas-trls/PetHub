@@ -1,5 +1,8 @@
-<div class="index-container">
-  <h1>Pets</h1>
+<div class="container">
+  <div class="index-header">
+    <h1>Pets</h1>
+    <%= link_to "Add My Pet", new_pet_path, class: "btn btn-ghost" %>
+  </div>
 </div>
 
 <div class="index-container">
@@ -8,7 +11,11 @@
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
         <%= link_to pet_path(pet) do %>
         <div class="card-trip">
-          <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
+          <% if pet.photo.attached? %>
+            <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
+          <% else %>
+           <%= cl_image_tag 'redpaw.png', height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
+          <% end %>
           <div class="card-trip-infos">
             <div>
                 <h2><%= pet.name %></h2>
