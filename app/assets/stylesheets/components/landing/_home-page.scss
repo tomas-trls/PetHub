@@ -52,12 +52,11 @@
 
 .clock-block {
   position: absolute;
-  top: -158px;
+  top: 197px;
   left: 816px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 .clock {
@@ -79,11 +78,11 @@
 .minute,
 .hour {
   position: absolute;
-  height: 20px;
+  height: 19px;
   width: 2px;
   margin: auto;
-  top: -37%;
-  left: 0;
+  top: -32%;
+  left: -2px;
   bottom: 0;
   right: 0;
   background: black;
@@ -95,9 +94,9 @@
 
 .minute {
   position: absolute;
-  height: 20px;
+  height: 25px;
   width: 2px;
-  top: -37%;
+  top: -36%;
   left: 0;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   transform: rotate(90deg);
@@ -105,7 +104,7 @@
 
 .second {
   position: absolute;
-  height: 20px;
+  height: 25px;
   width: 1px;
   margin: auto;
   top: -37%;
