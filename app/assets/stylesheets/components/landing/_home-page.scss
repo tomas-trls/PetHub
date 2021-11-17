@@ -1,10 +1,16 @@
-.background-building {
+.background-building-not-sign {
   width:1150px;
   background-image: url("Home-not-Signed-in.svg");
   background-repeat: no-repeat;
   height: 100vh;
 }
 
+.background-building-signed {
+    width:1150px;
+    background-image: url("Home-after-Signed-in.svg");
+    background-repeat: no-repeat;
+    height: 100vh;
+}
 .aboutus {
   position: absolute;
   width: 77px;
@@ -49,6 +55,15 @@
   /* red */
 }
 
+
+.bookings {
+position: absolute;
+width: 220px;
+height: 320px;
+left: 745px;
+top: 275px;
+border-radius: 55px 55px 0 0;
+}
 //CLOCK
 
 .clock-block {
