@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :find_pet, only: [:show]
+  before_action :find_pet, only: [:show, :edit, :update]
   def show
     @pet = Pet.find(params[:id])
     @booking = Booking.new
@@ -30,6 +30,16 @@ class PetsController < ApplicationController
       render :new
     end
   end
+
+  def update
+    if @pet.update(pet_params)
+      redirect_to pet_path(@pet)
+    else
+      render :edit
+    end
+  end
+
+  def edit; end
 
   private
 
