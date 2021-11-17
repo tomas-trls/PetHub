@@ -1,29 +1,31 @@
-<h1>Pets</h1>
+<div class="container">
+  <h1 class="text-center">Pets</h1>
 
 
-<div class="index-container">
-  <div class="cards">
-    <% @pets.each do |pet| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <%= link_to pet_path(pet) do %>
-        <div class="card-trip">
-          <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
-          <div class="card-trip-infos">
-            <div>
-                <h2><%= pet.name %></h2>
-                <p><%= pet.description %></p>
+  <div class="index-container">
+    <div class="cards">
+      <% @pets.each do |pet| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= link_to pet_path(pet) do %>
+          <div class="card-trip">
+            <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
+            <div class="card-trip-infos">
+              <div>
+                  <h2><%= pet.name %></h2>
+                  <p><%= pet.description %></p>
+              </div>
+              <h2 class="card-trip-pricing">£99.99</h2>
             </div>
-            <h2 class="card-trip-pricing">£99.99</h2>
           </div>
+          <% end %>
         </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-  <div class="map-container">
-    <div id="map" style="width: 100%; height: 600px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      <% end %>
+    </div>
+    <div class="map-container">
+      <div id="map" style="width: 100%; height: 600px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
   </div>
 </div>
