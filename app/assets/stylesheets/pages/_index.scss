@@ -1,2 +1,31 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.index-container {
+  display: flex;
+}
+
+.map-container {
+  width: 400px;
+}
+
+.cards {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 15px;
+  flex-grow: 1;
+}
+
+@media(max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
