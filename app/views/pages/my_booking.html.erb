@@ -1,0 +1,43 @@
+<div class="profile">
+<h1 class="mb-5">My Booking Requests</h1>
+
+  <div class="fancy-card-wrapper d-flex flex-row justify-content-between">
+    <div>
+    <div class="fancy-card-image profile-img--two">
+      <%= cl_image_tag @booking.pet.photo.key, height: 400, width: 400, crop: :fill %>
+    </div>
+    <div class="mb-2">
+      <div class="card-product booking-card" style="width: 390px; height: 5rem;">
+        <h5 class="card-title">
+            <%=@booking.pet.name %>
+        </h5>
+        <p class="card-text"><%= @booking.pet.description %></p>
+      </div>
+    </div>
+    </div>
+      <div>
+        <div class="card-product booking-card">
+            <i class="far fa-user fa-4x"></i>
+          <div class="card-product-infos">
+            <h2>Owner Details</h2>
+            <p><strong>Name:</strong> <%= @booking.pet.user.first_name.capitalize %> <%= @booking.pet.user.first_name.capitalize %></p>
+            <p><strong>Email:</strong> <%= @booking.pet.user.email %></p>
+            <p><strong>Postcode:</strong> <%= @booking.pet.user.postcode %></p>
+          </div>
+        </div>
+          <div class="card-product booking-card">
+            <i class="fas fa-calendar-week fa-4x"></i>
+          <div class="card-product-infos">
+            <h2>Booking Details</h2>
+            <p><strong>Date:</strong> <%= @booking.start_date.strftime("%d-%m-%Y") %> - <%= @booking.end_date.strftime("%d-%m-%Y")%></p>
+            <p><strong>Owner confirmation:</strong> <%= @booking.owner_confirmation %></p>
+            <p><strong>Sitter confirmation:</strong> <%= @booking.sitter_confirmation %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+  <hr>
+  <%= link_to "Back to bookings", my_bookings_path, class: "btn btn-primary"%>

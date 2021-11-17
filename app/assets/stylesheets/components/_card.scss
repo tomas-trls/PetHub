@@ -294,3 +294,13 @@
 .booking-form-card {
   border-radius: 8px;
 }
+
+.booking-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 250px;
+    padding: 10px;
+    width: 100%;
+    align-content: flex-end;
+}
