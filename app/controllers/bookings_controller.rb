@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_pet, :set_user, only: [:new,:create]
+  before_action :set_pet, :set_user, only: %i[new create]
 
   def index
     @bookings = Booking.all

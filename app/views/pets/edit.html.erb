@@ -1,3 +1,4 @@
 <div class="col-8 mx-auto">
 <h1 class="mb-4">Edit pet booking</h1>
+<%= link_to "Delete Pet", pet_path(@pet), method: :delete, class: "btn btn-ghost" %>
 <%= render "form" %>
