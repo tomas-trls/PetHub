@@ -12,8 +12,14 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
+
+        <%if current_user.photo.attached?%>
           <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false,  height: 40, width: 40, crop: :fill %>
+        <%else%>
+          <i class="fas fa-user nav-link avatar dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <%end%>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="navbarDropdown">
+            <%= link_to "My profile", edit_user_registration_path, class: "dropdown-item navbar-red-text" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item navbar-red-text" %>
           </div>
         </li>
