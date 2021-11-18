@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
   end
+
   def my_booking
     @booking = Booking.find(params[:id])
   end

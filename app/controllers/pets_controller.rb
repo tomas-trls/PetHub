@@ -1,7 +1,7 @@
 class PetsController < ApplicationController
-  before_action :find_pet, only: [:show, :edit, :update]
+  before_action :find_pet, only: %i[show edit update destroy]
+
   def show
-    @pet = Pet.find(params[:id])
     @booking = Booking.new
   end
 
@@ -37,6 +37,11 @@ class PetsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @pet.destroy
+    redirect_to pets_path
   end
 
   def edit; end
