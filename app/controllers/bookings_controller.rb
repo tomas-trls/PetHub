@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    # @pet_price = Pet.where("created_at >= ? AND created_at < ?", Time.now.beginning_of_day, Time.now.end_of_day).sum(:price)
   end
 
   def create
@@ -33,6 +34,9 @@ class BookingsController < ApplicationController
     redirect_to my_bookings_path
   end
 
+
+
+
   private
 
   def set_pet
@@ -46,4 +50,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
+
 end
