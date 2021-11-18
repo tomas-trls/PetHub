@@ -1,0 +1,27 @@
+<div class="container">
+
+  <%= link_to "Add Pet", new_pet_path, class: "btn btn-secondary m-4" %>
+   <div class="cards">
+    <% if current_user.pets.count == 0 %>
+      <h1 class="text-center">You have no pets!</h1>
+      <% else %>
+      <% current_user.pets.each do |pet| %>
+        <div class="card-trip" style="width: 18rem;">
+        <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
+        <div class="card-body">
+          <h2 class="card-title text-center">Name: <%= pet.name%></h2>
+          <h2 class="card-title text-center">Age: <%=pet.age%></h2>
+          <p class="card-text mt-2 text-center mb-0"><%=pet.description%></p>
+        <hr>
+        <div class="d-flex justify-content-around">
+        <%= link_to "Edit", edit_pet_path(pet), class: "card-link text-warning " %>
+        <%= link_to "More Info", pet_path(pet), class: "card-link text-info" %>
+        <%= link_to "Delete", pet_path(pet), method: :delete, data: {confirm: "Are you sure you want to delete Pet?"}, class: "text-danger card-link"%>
+        </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
