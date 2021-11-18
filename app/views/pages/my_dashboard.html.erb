@@ -1,13 +1,13 @@
 <div class="container">
   <% if current_user.first_name.strip[-1] == "s"%>
   <h1 class="text-center"><%="#{current_user.first_name.strip}'"%> Dashboard</h1>
-  <%else%>
-    <% if current_user.first_name %>
-      <h1><%="#{current_user.first_name.strip}'s"%> Dashboard</h1>
-    <% else %>
-      <h1>My Dashboard</h1>
+    <%else%>
+      <% if current_user.first_name %>
+        <h1><%="#{current_user.first_name.strip}'s"%> Dashboard</h1>
+      <% else %>
+        <h1>My Dashboard</h1>
+      <%end%>
     <%end%>
-  <% end %>
 
   <div class="container">
     <nav>
