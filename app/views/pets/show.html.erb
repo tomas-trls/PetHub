@@ -13,7 +13,6 @@
 
             <div class="fancy-card-image profile-img--two">
               <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
-              <%# <img src="https://image.ibb.co/c9rY6J/profile02.jpg" alt="profile two"> %>
             </div>
 
             <ul class="social-icons">
@@ -72,18 +71,29 @@
             <i class="far fa-calendar-alt fa-4x"></i>
           </div>
           <div class="card-product-infos">
+            <% unless @pet.user == current_user %>
             <h2>Booking</h2>
             <p>Arrange a day with <%= @pet.name %>
             <strong><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
               here.</a></strong>
             </p>
+            <% else %>
+              <h2><%= @pet.name %> bookings</h2>
+              <p>View <%= @pet.name %>'s bookings
+                <strong><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> here.</a></strong>
+              </p>
+            <% end %>
           </div>
         </div>
+        <% unless @pet.user == current_user %>
           <div class="collapse" id="collapseExample">
-            <div class="card card-body booking-form-card">
-              <%= render 'bookings/new' %>
+            <div class="card card-body booking-form-card m-3">
+              <%= render 'bookings/new'%>
             </div>
           </div>
+        <% else%>
+          <%= render 'pet-booking' %>
+        <% end %>
       </div>
     </div>
   </div>

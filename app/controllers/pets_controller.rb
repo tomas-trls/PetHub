@@ -2,6 +2,8 @@ class PetsController < ApplicationController
   before_action :find_pet, only: [:show, :edit, :update]
   def show
     @pet = Pet.find(params[:id])
+    @current_bookings = @pet.bookings.where.not(bookingStatus: "rejected")
+    # @current_bookings = @pet.bookings.order('start_date ASC').reject { |booking| booking.bookingStatus == "rejected"  }
     @booking = Booking.new
   end
 

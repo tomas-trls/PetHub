@@ -1,0 +1,16 @@
+.pet-booking-card {
+  border-bottom: 1.5px solid rgb(213, 210, 210);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.pet-booking-card:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.ps-text-small p{
+  font-size: 14px;
+  margin-bottom: 0.25rem;
+}

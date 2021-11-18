@@ -1,0 +1,37 @@
+<div class="card card-body booking-form-card m-3 collapse" id="collapseExample">
+  <% @current_bookings.each do |booking| %>
+    <div class= "pet-booking-card">
+      <div class="ml-2 d-flex">
+        <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :fill, :radius=>"max" %>
+        <div class="ml-3">
+          <% if booking.bookingStatus == "pending" %>
+            <strong><%= booking.user.first_name %></strong>
+            would love to hang out with <%= @pet.name %>
+          <% elsif booking.bookingStatus == "accepted" %>
+            <strong><%= booking.user.first_name %></strong>
+            would be hanging out with <%= @pet.name %>
+          <% end %>
+          <div class="ps-text-small mt-2">
+            <p><strong>Location: </strong><%= booking.user.address %></p>
+            <p><strong>Date: </strong><%= booking.start_date.strftime("%d/%m/%Y")%> - <%= booking.end_date.strftime("%d/%m/%Y")%></p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <% if booking.bookingStatus == "pending" %>
+          <%= link_to confirm_booking_path(booking), method: 'patch', class: "text-decoration-none" do%>
+            <i class="fas fa-check bg-success text-white p-2 rounded mr-2"></i>
+          <% end %>
+          <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to reject?" }, class: "text-decoration-none" do%>
+            <i class="fas fa-times bg-danger text-white p-2 rounded"></i>
+          <% end %>
+        <% elsif booking.bookingStatus == "accepted"%>
+          <%= link_to "Cancel", cancel_booking_path(booking), method: 'patch', data: { confirm: "Are you sure you want to cancel?" }, class: "btn btn-danger"%>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <% if @current_bookings.count.zero?  %>
+    No bookings at the moment
+  <% end %>
+</div>

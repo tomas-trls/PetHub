@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "my_bookings", to: "pages#my_bookings"
   get "my_bookings/:id", to: "pages#my_booking", as: :my_booking
   delete "my_bookings/:id", to: "bookings#destroy"
+  patch "confirm_booking/:id", to: "bookings#confirm_booking", as: :confirm_booking
+  patch "cancel_booking/:id", to: "bookings#cancel_booking", as: :cancel_booking
   resources :pets, only: [:new, :create, :index, :show, :edit, :update] do
     resources :bookings, only: [:new, :create]
   end
