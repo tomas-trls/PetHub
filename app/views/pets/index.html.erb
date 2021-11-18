@@ -8,7 +8,7 @@
 <div class="index-container">
   <div class="cards">
     <% @pets.each do |pet| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+      <div class="card-category">
         <%= link_to pet_path(pet) do %>
         <div class="card-trip">
           <% if pet.photo.attached? %>
