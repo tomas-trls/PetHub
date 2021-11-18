@@ -40,7 +40,10 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    @user = @pet.user
     @pet.destroy
+    @user.owner = false if @user.pets.count.zero?
+    @user.save
     redirect_to pets_path
   end
 
