@@ -1,9 +1,10 @@
 <div class="container">
   <div class="show-header">
     <div class="show-buttons">
-      <%= link_to "Back To Pets", pets_path, class: "btn btn-flat" %>
+
+      <%= link_to "Back To Pets", pets_path, class: "btn-add draw-border" %>
       <% if @pet.user == current_user %>
-        <%= link_to "Edit Pet", edit_pet_path(@pet), class: "btn btn-flat" %>
+        <%= link_to "Edit Pet", edit_pet_path(@pet), class: "btn-add draw-border" %>
       <% end %>
     </div>
   </div>
@@ -79,10 +80,11 @@
           <div class="card-product-infos">
             <% unless @pet.user == current_user %>
             <h2>Booking</h2>
-            <p>Arrange a day with <%= @pet.name %>
-            <strong><a class="btn btn-primary" data-target="#exampleModalCenter" data-toggle="modal" href="#exampleModalCenter" role="button" aria-expanded="false" aria-controls="exampleModalCenterTitle">
-              here.</a></strong>
-            </p>
+            <div class="d-flex justify-content-between align-items-center">
+            <p>Arrange a day with <%= @pet.name %></p>
+            <strong><a class="d-inline-block btn btn-flat" data-target="#exampleModalCenter" data-toggle="modal" href="#exampleModalCenter" role="button" aria-expanded="false" aria-controls="exampleModalCenterTitle">
+              HERE</a></strong>
+            </div>
             <% else %>
               <h2><%= @pet.name %> bookings</h2>
               <p>View <%= @pet.name %>'s bookings
