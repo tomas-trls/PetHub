@@ -1,15 +1,15 @@
 <div class="container">
-<% if current_user.first_name.empty? %>
-    <h1>My Dashboard</h1>
-  <% else %>
-    <% if current_user.first_name.strip[-1] == "s"%>
-    <h1 class="text-center"><%="#{current_user.first_name.strip}'"%> Dashboard</h1>
-    <%else%>
-      <h1><%="#{current_user.first_name.strip}'s"%> Dashboard</h1>
-    <%end%>
-  <%end%>
 
-  <div class="container">
+
+  <% if current_user.first_name && current_user.first_name[-2] == "s" %>
+    <h1><%="#{current_user.first_name.strip[-1]}'"%> Dashboard</h1>
+  <% elsif current_user.first_name && current_user.first_name[-2] != "s" %>
+    <h1><%="#{current_user.first_name.strip[-1]}'s"%> Dashboard</h1>
+    <% else %>
+    <h1>My Dashboard</h1>
+  <% end %>
+
+    <div class="container">
     <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <button class="nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My Pets </button>
