@@ -311,3 +311,14 @@
     width: 100%;
     align-content: flex-end;
 }
+
+.review {
+  display: flex;
+  flex-direction: column;
+}
+
+.review .review-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
