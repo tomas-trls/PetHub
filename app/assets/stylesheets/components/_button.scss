@@ -4,9 +4,20 @@
   border-radius: 4px;
   background: $red;
   transition: background 0.3s ease;
+  display: block;
 }
 
 .btn-flat:hover {
   background: $yellow;
   color: $red;
+}
+
+.btn-delete {
+  height: 40px;
+  width: 120px;
+  align-self: flex-end;
+
+.show-buttons {
+  display: flex;
+  justify-content:space-between;
 }
