@@ -49,7 +49,7 @@ class PetsController < ApplicationController
     @pet.destroy
     @user.owner = false if @user.pets.count.zero?
     @user.save
-    redirect_to pets_path
+    redirect_to my_dashboard_path
   end
 
   def edit; end

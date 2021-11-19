@@ -1,10 +1,8 @@
-<div class="container">
-
-
+<div class="container mt-5">
   <% if current_user.first_name && current_user.first_name[-2] == "s" %>
-    <h1><%="#{current_user.first_name.strip[-1]}'"%> Dashboard</h1>
+    <h1><%="#{current_user.first_name.strip}'"%> Dashboard</h1>
   <% elsif current_user.first_name && current_user.first_name[-2] != "s" %>
-    <h1><%="#{current_user.first_name.strip[-1]}'s"%> Dashboard</h1>
+    <h1><%="#{current_user.first_name}'s"%> Dashboard</h1>
     <% else %>
     <h1>My Dashboard</h1>
   <% end %>
@@ -13,7 +11,9 @@
     <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <button class="nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My Pets </button>
-    <button class="nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-pet_booking" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Pets Booking</button>
+    <% if current_user.owner == true%>
+      <button class="nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-pet_booking" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Pets Booking</button>
+    <% end %>
     <button class="nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My Bookings</button>
     <button class="nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">My Messages</button>
   </div>

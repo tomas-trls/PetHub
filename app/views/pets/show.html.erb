@@ -1,6 +1,5 @@
 <div class="container">
   <div class="show-header">
-    <h1>Pet Profile</h1>
     <div class="show-buttons">
       <%= link_to "Back To Pets", pets_path, class: "btn btn-flat" %>
       <%= link_to "Edit Pet", edit_pet_path(@pet), class: "btn btn-flat" %>
@@ -63,7 +62,7 @@
             </div>
             <div class="card-product-infos">
               <h2>Owner Details</h2>
-              <p><strong>Name:</strong> <%= @pet.user.first_name.capitalize %> <%= @pet.user.first_name.capitalize %></p>
+              <p><strong>Name:</strong> <%= @pet.user.first_name %> <%= @pet.user.first_name %></p>
               <p><strong>Email:</strong> <%= @pet.user.email %></p>
               <p><strong>Postcode:</strong> <%= @pet.user.postcode %></p>
             </div>
@@ -78,7 +77,7 @@
             <% unless @pet.user == current_user %>
             <h2>Booking</h2>
             <p>Arrange a day with <%= @pet.name %>
-            <strong><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <strong><a class="btn btn-primary" data-target="#exampleModalCenter" data-toggle="modal" href="#exampleModalCenter" role="button" aria-expanded="false" aria-controls="exampleModalCenterTitle">
               here.</a></strong>
             </p>
             <% else %>
@@ -90,9 +89,23 @@
           </div>
         </div>
         <% unless @pet.user == current_user %>
-          <div class="collapse" id="collapseExample">
-            <div class="card card-body booking-form-card m-3">
-              <%= render 'bookings/new'%>
+<!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="exampleModalLongTitle">Book a pet!</h1>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <%= render 'bookings/new'%>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-flat" data-dismiss="modal">Close</button>
+                </div>
+              </div>
             </div>
           </div>
         <% else%>
