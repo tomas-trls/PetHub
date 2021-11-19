@@ -12,7 +12,7 @@
   width:1150px;
   background-image: url("Home-after-Signed-in.svg");
   background-repeat: no-repeat;
-  height: 90vh;
+  height: 100vh;
   position: relative;
   top: -100px;
   z-index: -2;
@@ -20,13 +20,12 @@
 
 .aboutus {
   position: absolute;
-  width: 77px;
-  height: 177.16px;
-  left: 182px;
+  width: 80px;
+  height: 190px;
+  left: 160px;
   top: 212px;
 
   /* yellow */
-
   //background: blue;
   /* red */
 }
@@ -36,10 +35,10 @@
 
 
   position: absolute;
-  width: 147px;
-  height: 242px;
-  left: 308px;
-  top: 237px;
+  width: 158px;
+  height: 252px;
+  left: 293px;
+  top: 246px;
 
   /* yellow */
 
@@ -51,10 +50,10 @@
 
 
   position: absolute;
-  width: 145px;
-  height: 129px;
+  width: 160px;
+  height: 130px;
   left: 490px;
-  top: 241px;
+  top: 245px;
   /* yellow */
 
   //background: blue;
@@ -64,18 +63,20 @@
 
 .bookings {
 position: absolute;
-width: 220px;
-height: 320px;
-left: 745px;
-top: 175px;
+width: 240px;
+height: 345px;
+left: 767px;
+top: 170px;
 border-radius: 55px 55px 0 0;
+
+//background-color: blue;
 }
 //CLOCK
 
 .clock-block {
   position: absolute;
-  top: 97px;
-  left: 816px;
+  top: 90px;
+  left: 844px;
   display: flex;
   align-items: center;
   justify-content: center;
