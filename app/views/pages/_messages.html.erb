@@ -1,15 +1,48 @@
 <div class="container">
 
 <h1 class="mt-5">Your Inbox</h1>
-  <div class="container">
+  <div class="container message">
     <div class="card-product">
-      <img class="card-product img" src="" />
+      <%= image_tag "ross.jpeg", class: "card-product img"  %>
       <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
+        <h2>Ross Geller</h2>
+        <p><strong> Hey I really like your pets profile, I would really like to...</strong></p>
+      </div>
+    </div>
+    <div class="card-product">
+      <%= image_tag "theQueen.jpeg", class: "card-product img"  %>
+      <div class="card-product-infos">
+        <h2>The Queen of England</h2>
+        <p><strong> Hey I really like your pets profile, I would really like to...</strong></p>
+      </div>
+    </div>
+    <div class="card-product">
+      <%= image_tag "female.jpeg", class: "card-product img"  %>
+      <div class="card-product-infos">
+        <h2 style="color: grey;">Louise Johnson</h2>
+        <p style="color: grey;"> Hey I really like your pets profile, I would really like to...</p>
+      </div>
+    </div>
+    <div class="card-product">
+      <%= image_tag "male.jpeg", class: "card-product img"  %>
+      <div class="card-product-infos">
+        <h2 style="color: grey;">Dre Day</h2>
+        <p style="color: grey;">Hey I really like your pets profile, I would really like to...</p>
+      </div>
+    </div>
+    <div class="card-product">
+      <%= image_tag "doggy.jpeg", class: "card-product img"  %>
+      <div class="card-product-infos">
+        <h2 style="color: grey;">Roo Loveless</h2>
+        <p style="color: grey;"> Hey I really like your pets profile, I would really like to...</p>
+      </div>
+    </div>
+    <div class="card-product">
+      <%= image_tag "older_female.jpeg", class: "card-product img"  %>
+      <div class="card-product-infos">
+        <h2 style="color: grey;">Ross Geller</h2>
+        <p style="color: grey;"> Hey I really like your pets profile, I would really like to...</p>
       </div>
     </div>
   </div>
 </div>
-
-<p><%= current_user.bookings[0][0] %></p>
