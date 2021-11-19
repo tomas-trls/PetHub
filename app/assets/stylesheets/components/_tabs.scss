@@ -4,7 +4,7 @@
 }
 
 .tabs-underlined .tab-underlined {
-  color: black;
+  color: #F05132;
   padding: 8px;
   margin: 8px 16px;
   opacity: .4;
@@ -15,15 +15,28 @@
 
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
-  border-bottom: 3px solid #555555;
+  border-bottom: 3px solid #F05132;
 }
 
-.nav-
+.nav-tabs > .nav-link {
+  border-radius: 20px 20px 0 0;
+  padding: 16px;
+  font-size: 24px;
+  background-color: #F7A1A1;
+}
+
+.nav-tabs > .nav-link.active {
+  background-color: #f5c2c2
+}
 
 .nav > .nav-link.active {
   color: #F05132;
-  font-weight: bold;
+  font-weight: bold;;
 }
 .nav > .nav-link {
   color: #F05132;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #F05132;
 }

@@ -21,6 +21,12 @@
   transform: scale(1.05);
 }
 
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  margin-left: 0;
+}
 .image-container {
   position: relative;
 }
