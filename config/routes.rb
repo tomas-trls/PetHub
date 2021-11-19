@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "my_bookings", to: "pages#my_bookings"
   get "my_bookings/:id", to: "pages#my_booking", as: :my_booking
+  get "my_dashboard", to: "pages#my_dashboard"
   delete "my_bookings/:id", to: "bookings#destroy"
   patch "confirm_booking/:id", to: "bookings#confirm_booking", as: :confirm_booking
   patch "cancel_booking/:id", to: "bookings#cancel_booking", as: :cancel_booking
-  resources :pets, only: [:new, :create, :index, :show, :edit, :update] do
+  resources :pets, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:edit, :update, :destroy]

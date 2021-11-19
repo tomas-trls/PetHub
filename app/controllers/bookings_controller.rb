@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_pet, :set_user, only: [:new,:create]
+  before_action :set_pet, :set_user, only: %i[new create]
 
   def index
     @bookings = Booking.all
@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    # @pet_price = Pet.where("created_at >= ? AND created_at < ?", Time.now.beginning_of_day, Time.now.end_of_day).sum(:price)
   end
 
   def create
@@ -56,6 +57,9 @@ class BookingsController < ApplicationController
     end
   end
 
+
+
+
   private
 
   def set_pet
@@ -69,4 +73,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
+
 end

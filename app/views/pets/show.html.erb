@@ -2,9 +2,11 @@
   <div class="index-header">
     <h1>Pet Profile</h1>
     <%= link_to "Back To Pets", pets_path, class: "btn btn-ghost" %>
+    <%= link_to "Edit Pet", edit_pet_path(@pet), class: "btn btn-ghost" %>
   </div>
 </div>
 <div class="container">
+<h1 class="text-center">Pet Profile</h1>
   <div class="row">
     <div class="col-lg-4 col-m-6 col-sm-12">
       <div class="fancy-card-wrapper">

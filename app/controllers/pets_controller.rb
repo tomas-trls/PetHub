@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
-  before_action :find_pet, only: [:show, :edit, :update]
+  before_action :find_pet, only: %i[show edit update destroy]
+
   def show
     @pet = Pet.find(params[:id])
     @current_bookings = @pet.bookings.where.not(bookingStatus: "rejected")
@@ -27,6 +28,8 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     if @pet.save
+      @pet.user.owner = true if @pet.user.pets.count >= 1
+      @pet.user.save
       redirect_to pet_path(@pet)
     else
       render :new
@@ -39,6 +42,14 @@ class PetsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @user = @pet.user
+    @pet.destroy
+    @user.owner = false if @user.pets.count.zero?
+    @user.save
+    redirect_to pets_path
   end
 
   def edit; end

@@ -14,6 +14,15 @@ pet_breeds = ["Cat", "Horse", "Monkey", "Dog", "Hamster"]
 pet_url = "https://res.cloudinary.com/ojimoh21/image/upload/v1637064718/development/Animals/"
 pet_filenames = ["garfield_2_08_ogsybn.jpg", "horse_qfhd44.jpg", "marcel_q6uihk.jpg", "oscar_qpczyf.jpg", "hamster_w3vowt.jpg"]
 
+post_codes = [
+  "Hoxton, Hackney, London, Greater London, England, United Kingdom",
+  "138 Kingsland Road, Newham, London, E13 9NU, United Kingdom",
+  "Circus Street, Oxford, OX4 1JR, United Kingdom",
+  "Liverpool, Merseyside, England, United Kingdom",
+  "Tottenham Street, Camden, London, W1T 2AW, United Kingdom",
+  "Wembley, Greater London, England, United Kingdom"
+]
+
 puts "Seeding started"
 Booking.destroy_all
 Pet.destroy_all
@@ -48,7 +57,7 @@ puts 'Creating 2 users that are owners with 5 pets each'
   user.last_name = Faker::Name.last_name
   user.password = "123456"
   user.postcode = Faker::Address.postcode
-  user.address = Faker::Address.city
+  user.address = post_codes.sample
   user.owner = true
   user_file = URI.open((user_url + user_filenames[user_counter]).to_s)
   user.photo.attach(io: user_file, filename: (user_filenames[user_counter]).to_s, content_type: 'image/jpg')
@@ -63,8 +72,10 @@ puts 'Creating 2 users that are owners with 5 pets each'
     pet.name = Faker::Ancient.god
     pet.species = pet_breeds[pet_counter]
     pet.breed = Faker::Ancient.titan
-    pet.age = rand(1..100)
+    pet.address = post_codes.sample
+    pet.age = rand(1..10)
     pet.description = "I love to eat and catch up on my beauty sleep"
+    pet.price = rand(20.0..200.0).round(2)
     pet_file = URI.open((pet_url + pet_filenames[pet_counter]).to_s)
     pet.photo.attach(io: pet_file, filename: (pet_filenames[pet_counter]).to_s, content_type: 'image/jpg')
     pet.user = user
@@ -82,8 +93,8 @@ user.email = "queenElizabeth@royal.uk"
 user.first_name = "Elizabeth"
 user.last_name = "Windsor"
 user.password = "123456"
-user.postcode = "SW1A 1AA"
-user.address = "Westminster"
+user.postcode = Faker::Address.postcode
+user.address = "Buckingham Pal Road, Westminster, London, SW1W 0SR, United Kingdom"
 user.owner = true
 user_file = URI.open((user_url + user_filenames[0]).to_s)
 user.photo.attach(io: user_file, filename: (user_filenames[0]).to_s, content_type: 'image/jpg')
@@ -94,7 +105,8 @@ user.save!
   pet.name = Faker::Ancient.god
   pet.species = pet_breeds[pet_counter]
   pet.breed = Faker::Ancient.titan
-  pet.age = rand(1..100)
+  pet.age = rand(1..10)
+  pet.address = "Buckingham Palace, london"
   pet.description = "I love to eat and catch up on my beauty sleep"
   pet_file = URI.open((pet_url + pet_filenames[pet_counter]).to_s)
   pet.photo.attach(io: pet_file, filename: (pet_filenames[pet_counter]).to_s, content_type: 'image/jpg')
@@ -128,7 +140,7 @@ booking.save!
 booking = Booking.new
 booking.start_date = Date.today
 booking.end_date = booking.start_date.advance(days: 10)
-booking.pet = User.all[4].pets[2]
+booking.pet = User.all[3].pets[2]
 booking.user = User.last
 booking.save!
 
@@ -148,7 +160,7 @@ booking.save!
 booking = Booking.new
 booking.start_date = Date.today + 2
 booking.end_date = Date.today + 6
-booking.pet = User.all[4].pets[3]
+booking.pet = User.all[3].pets[3]
 booking.user = User.last
 booking.bookingStatus = "accepted"
 booking.save!
@@ -192,7 +204,7 @@ booking.save!
 booking = Booking.new
 booking.start_date = Date.today - 6
 booking.end_date = Date.today - 4
-booking.pet = User.all[4].pets[3]
+booking.pet = User.all[3].pets[3]
 booking.user = User.last
 booking.bookingStatus = "accepted"
 booking.owner_confirmation = true

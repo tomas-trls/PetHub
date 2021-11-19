@@ -4,24 +4,23 @@
     <%= link_to "Add My Pet", new_pet_path, class: "btn btn-ghost" %>
   </div>
 </div>
-
-<div class="index-container">
+<div class="container d-flex">
   <div class="cards">
     <% @pets.each do |pet| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+      <div class="card-category">
         <%= link_to pet_path(pet) do %>
         <div class="card-trip">
           <% if pet.photo.attached? %>
             <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
           <% else %>
-           <%= cl_image_tag 'redpaw.png', height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
+          <%= cl_image_tag 'redpaw.png', height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
           <% end %>
           <div class="card-trip-infos">
             <div>
                 <h2><%= pet.name %></h2>
                 <p><%= pet.description %></p>
             </div>
-            <h2 class="card-trip-pricing">£99.99</h2>
+            <h2 class="card-trip-pricing"><%= pet.price %></h2>
           </div>
         </div>
         <% end %>
@@ -34,4 +33,5 @@
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+
 </div>
