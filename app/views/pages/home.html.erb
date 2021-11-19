@@ -1,13 +1,15 @@
 <div class="container position-relative">
   <div class="aboutus"></div>
-  <%= link_to pets_path do%>
-  <div class="entrance"></div>
-  <% end %>
-  <div class="contact"></div>
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
+
+    <%= link_to my_bookings_path(@booking) do %>
+    <div class="contact"></div>
+    <% end %>
+
     <%= link_to pets_path do%>
       <div class="entrance"></div>
     <% end %>
+
     <%= link_to my_dashboard_path do %>
       <div class="bookings"></div>
     <% end %>
@@ -16,6 +18,10 @@
       <%= link_to new_user_session_path do%>
       <div class="entrance"></div>
     <% end %>
+
+      <%= link_to new_user_registration_path do %>
+        <div class="contact"></div>
+      <% end %>
     <div class="background-building-not-sign"></div>
     <% end %>
   <div class="clock-block">
