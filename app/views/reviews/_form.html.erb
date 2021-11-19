@@ -1,0 +1,9 @@
+<div id="review-form">
+  <% @review = Review.new %>
+  <%= simple_form_for(@review) do |f|%>
+    <%= f.hidden_field :booking_id, value: @booking.id %>
+    <%= f.input :content %>
+    <%= f.input :rating, as: :integer, input_html: { min: '0', max: '5', step: 'any' } %>
+    <%= f.submit "Post Review", class: "btn btn-flat" %>
+  <%end%>
+</div>

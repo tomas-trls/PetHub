@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def my_booking
     @booking = Booking.find(params[:id])
+    @reviews = Review.where(booking_id: @booking.id)
   end
 
   def my_bookings
