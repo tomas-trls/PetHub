@@ -3,7 +3,9 @@
     <h1>Pet Profile</h1>
     <div class="show-buttons">
       <%= link_to "Back To Pets", pets_path, class: "btn btn-flat" %>
-      <%= link_to "Edit Pet", edit_pet_path(@pet), class: "btn btn-flat" %>
+      <% if @pet.user == current_user %>
+        <%= link_to "Edit Pet", edit_pet_path(@pet), class: "btn btn-flat" %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -54,6 +56,7 @@
               <p><strong>Species:</strong> <%= @pet.species %></p>
               <p><strong>Breed:</strong> <%= @pet.breed %></p>
               <p><strong>Age:</strong> <%= @pet.age %></p>
+              <p><strong>Price:</strong> £<%= @pet.price %> per day</p>
             </div>
           </div>
 
