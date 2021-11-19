@@ -6,14 +6,15 @@
   height: 100px;
   padding: 0px 50px;
   margin-top: 30px;
-  color: rgba(0,0,0,0.3);
+  color: $white-pink;
+  border-top: 2px solid $red;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: $red;
+  color: $white-pink;
   opacity: 1;
   text-decoration: none;
   font-size: 24px;
