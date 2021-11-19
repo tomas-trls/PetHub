@@ -2,10 +2,11 @@
 
 .card-trip {
   overflow: hidden;
-  background: white;
+  background: $white-pink;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transition: all .2s ease-in-out;
-  border-radius: 8px;
+  border-radius:36px;
+  border: 1px solid $red;
 }
 
 .card-category {
@@ -17,31 +18,34 @@
 }
 
 .card-trip:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+.image-container {
+  position: relative;
 }
 
 .pet-card-image {
-  object-fit: fill !important;
+  object-fit: cover;
+  height: 180px;
+  width: 100%;
+
 }
 
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
 
 .card-trip h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
   color: $red;
+  font-family: 'Henriette';
+  font-size: 1.2em;
 }
 
 .card-trip p {
   font-size: 12px;
-  opacity: .7;
   margin: 0;
-  color: darkgrey;
+  color: #ff8482;
 }
 
 .card-trip .card-trip-infos {
@@ -85,7 +89,7 @@
   .fancy-card-image {
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 00px;
     width: 100%;
     height: 100%;
     z-index: 2;
@@ -97,7 +101,8 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: $white-pink;
+    background-position: center;
   }
 
   &:hover img {
@@ -242,7 +247,7 @@
 }
 
 .card-product:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .card-product .icon-box {

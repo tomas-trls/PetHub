@@ -1,7 +1,7 @@
 <div class="container">
   <div class="index-header">
     <h1>Pets</h1>
-    <%= link_to "Add My Pet", new_pet_path, class: "btn btn-ghost" %>
+    <%= link_to "Add My Pet", new_pet_path, class: "btn btn-flat" %>
   </div>
 </div>
 <div class="container d-flex">
@@ -11,7 +11,9 @@
         <%= link_to pet_path(pet) do %>
         <div class="card-trip">
           <% if pet.photo.attached? %>
+          <div class="image-container">
             <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
+          </div>
           <% else %>
           <%= cl_image_tag 'redpaw.png', height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
           <% end %>
@@ -20,7 +22,7 @@
                 <h2><%= pet.name %></h2>
                 <p><%= pet.description %></p>
             </div>
-            <h2 class="card-trip-pricing"><%= pet.price %></h2>
+            <h2 class="card-trip-pricing">£<%= pet.price %></h2>
           </div>
         </div>
         <% end %>
