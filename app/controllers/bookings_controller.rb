@@ -14,8 +14,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.pet = @pet
-    @booking.save!
-    redirect_to my_bookings_path
+    if @booking.save
+      redirect_to my_bookings_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -25,13 +28,45 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to my_bookings_path
+    if @booking.save
+      redirect_to my_bookings_path
+    else
+      render :edit
+    end
+  end
+
+  def confirm_booking
+    @booking = Booking.find(params[:id])
+    @booking.update(bookingStatus: "accepted")
+    redirect_to pet_path(@booking.pet)
+  end
+
+  def cancel_booking
+    @booking = Booking.find(params[:id])
+    @booking.update(bookingStatus: "cancelled")
+    redirect_to pet_path(@booking.pet)
+  end
+
+  def owner_confirm
+    @booking = Booking.find(params[:id])
+    @booking.update(owner_confirmation: true)
+    redirect_to pet_path(@booking.pet)
+  end
+
+  def sitter_confirm
+    @booking = Booking.find(params[:id])
+    @booking.update(bookingStatus: true)
+    redirect_to pet_path(@booking.pet)
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to my_bookings_path
+    if @booking.pet.user == current_user
+      redirect_to pet_path(@booking.pet)
+    else
+      redirect_to my_bookings_path
+    end
   end
 
 
@@ -48,7 +83,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :price)
   end
 
 end
