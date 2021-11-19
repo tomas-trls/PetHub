@@ -1,8 +1,10 @@
 <div class="container">
-  <div class="index-header">
+  <div class="show-header">
     <h1>Pet Profile</h1>
-    <%= link_to "Back To Pets", pets_path, class: "btn btn-ghost" %>
-    <%= link_to "Edit Pet", edit_pet_path(@pet), class: "btn btn-ghost" %>
+    <div class="show-buttons">
+      <%= link_to "Back To Pets", pets_path, class: "btn btn-flat" %>
+      <%= link_to "Edit Pet", edit_pet_path(@pet), class: "btn btn-flat" %>
+    </div>
   </div>
 </div>
 <div class="container">
@@ -14,7 +16,6 @@
 
             <div class="fancy-card-image profile-img--two">
               <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
-              <%# <img src="https://image.ibb.co/c9rY6J/profile02.jpg" alt="profile two"> %>
             </div>
 
             <ul class="social-icons">
