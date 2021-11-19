@@ -1,0 +1,27 @@
+<div class="container">
+
+
+  <% if current_user.first_name && current_user.first_name[-2] == "s" %>
+    <h1><%="#{current_user.first_name.strip[-1]}'"%> Dashboard</h1>
+  <% elsif current_user.first_name && current_user.first_name[-2] != "s" %>
+    <h1><%="#{current_user.first_name.strip[-1]}'s"%> Dashboard</h1>
+    <% else %>
+    <h1>My Dashboard</h1>
+  <% end %>
+
+    <div class="container">
+    <nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My Pets </button>
+    <button class="nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-pet_booking" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Pets Booking</button>
+    <button class="nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My Bookings</button>
+    <button class="nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">My Messages</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><%= render "my_pets"%></div>
+  <div class="tab-pane fade" id="nav-pet_booking" role="tabpanel" aria-labelledby="nav-pet-booking-tab">33</div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><%= render "my_bookings" %></div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><%= render "messages"%></div>
+</div>
+</div>

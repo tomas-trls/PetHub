@@ -13,6 +13,7 @@ pet_breeds = ["Cat", "Horse", "Monkey", "Dog", "Hamster"]
 pet_url = "https://res.cloudinary.com/ojimoh21/image/upload/v1637064718/development/Animals/"
 pet_filenames = ["garfield_2_08_ogsybn.jpg", "horse_qfhd44.jpg", "marcel_q6uihk.jpg", "oscar_qpczyf.jpg", "hamster_w3vowt.jpg"]
 
+Booking.destroy_all
 Pet.destroy_all
 User.destroy_all
 puts "Seeding started"
@@ -65,6 +66,7 @@ puts 'Creating 2 users that are owners with 5 pets each'
     pet.breed = Faker::Ancient.titan
     pet.age = rand(1..100)
     pet.description = "I love to eat and catch up on my beauty sleep"
+    pet.price = rand(20.0..200.0).round(2)
     pet_file = URI.open((pet_url + pet_filenames[pet_counter]).to_s)
     p pet_file
     pet.photo.attach(io: pet_file, filename: (pet_filenames[pet_counter]).to_s, content_type: 'image/jpg')
