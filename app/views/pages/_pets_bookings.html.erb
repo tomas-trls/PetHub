@@ -1,13 +1,13 @@
 <div class="container">
-  <h1 class="mt-5 text-center">My Bookings</h1>
-  <%= form_tag my_dashboard_path, class: "mb-6", method: :get do %>
-  <%= select_tag "sort_by",
+  <h1 class="mt-5 text-center">Pet Bookings</h1>
+  <%= form_tag my_dashboard_path, class: "mb-4", method: :get do %>
+  <%= select_tag "pet_sort_by",
       raw("<option>All</option><option>Pending</option><option>Upcoming bookings</option><option>History</option>"),
       :onchange => "this.form.submit();"
   %>
 <% end %>
   <div class="cards">
-    <% @my_bookings.each do |booking| %>
+    <% @pet_bookings.each do |booking| %>
       <div class="card-trip" style="width: 18rem;">
       <%= cl_image_tag booking.pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
       <div class="card-body">
