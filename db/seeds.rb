@@ -8,11 +8,11 @@
 require "open-uri"
 require 'date'
 user_url = "https://res.cloudinary.com/ojimoh21/image/upload/v1637064750/development/Animals/Owners/"
-user_filenames = ["queen_ut89el.jpg", "male_wcjz7f.jpg", "ross_zd1gpx.jpg", "rihanna_rvx2ex.jpg"]
+user_filenames = ["female_jeetsz.jpg", "Male_wr4n8l.jpg", "images_zgybit.jpg", "young_zdznjj.jpg"]
 
 pet_breeds = ["Cat", "Horse", "Monkey", "Dog", "Hamster"]
 pet_url = "https://res.cloudinary.com/ojimoh21/image/upload/v1637064718/development/Animals/"
-pet_filenames = ["garfield_2_08_ogsybn.jpg", "horse_qfhd44.jpg", "marcel_q6uihk.jpg", "oscar_qpczyf.jpg", "hamster_w3vowt.jpg"]
+pet_filenames = ["queens-corgi_epa4xz.jpg", "horse_qfhd44.jpg", "marcel_q6uihk.jpg", "oscar_qpczyf.jpg", "hamster_w3vowt.jpg"]
 
 post_codes = [
   "Hoxton, Hackney, London, Greater London, England, United Kingdom",
