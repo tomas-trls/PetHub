@@ -21,8 +21,8 @@
         <%end%>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="navbarDropdown">
             <%= link_to "My profile", edit_user_registration_path, class: "dropdown-item navbar-red-text" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item navbar-red-text" %>
             <%= link_to "My Dashboard", my_dashboard_path, class: "dropdown-item navbar-red-text"%>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item navbar-red-text" %>
           </div>
         </li>
       <% else %>

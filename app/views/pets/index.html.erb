@@ -3,36 +3,41 @@
     <h1>Pets</h1>
   </div>
 </div>
-<div class="container d-flex">
-  <div class="cards">
-    <% @pets.each do |pet| %>
-      <div class="card-category">
-        <%= link_to pet_path(pet) do %>
-        <div class="card-trip">
-          <% if pet.photo.attached? %>
-          <div class="image-container">
-            <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
-          </div>
-          <% else %>
-          <%= cl_image_tag 'redpaw.png', height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
-          <% end %>
-          <div class="card-trip-infos">
-            <div>
-                <h2><%= pet.name %></h2>
-                <p><%= pet.description %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-m-6 col-sm-12">
+      <div class="cards">
+        <% @pets.each do |pet| %>
+          <div class="card-category">
+            <%= link_to pet_path(pet) do %>
+            <div class="card-trip">
+              <% if pet.photo.attached? %>
+              <div class="image-container">
+                <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
+              </div>
+              <% else %>
+              <%= cl_image_tag 'redpaw.png', height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
+              <% end %>
+              <div class="card-trip-infos">
+                <div>
+                    <h2><%= pet.name %></h2>
+                    <p><%= pet.description %></p>
+                </div>
+                <h2 class="card-trip-pricing">£<%= pet.price %></h2>
+              </div>
             </div>
-            <h2 class="card-trip-pricing">£<%= pet.price %></h2>
+            <% end %>
           </div>
-        </div>
         <% end %>
       </div>
-    <% end %>
+    </div>
+    <div class="col-lg-4 col-m-6 col-sm-12">
+      <div class="map-container">
+        <div id="map" style="width: 100%; height:100vh;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
+    </div>
   </div>
-  <div class="map-container">
-    <div id="map" style="width: 100%; height:100vh;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
-
 </div>
