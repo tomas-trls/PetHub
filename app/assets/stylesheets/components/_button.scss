@@ -14,6 +14,11 @@
   color: $red;
 }
 
+.btn-delete {
+  height: 40px;
+  width: 120px;
+  align-self: flex-end;
+
 .show-buttons {
   display: flex;
   justify-content:space-between;
