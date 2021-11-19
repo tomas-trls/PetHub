@@ -4,7 +4,9 @@
   <%= f.input :start_date, as: :date, html5: true %>
   <%= f.input :end_date, as: :date, html5: true  %>
   <div class="d-flex">
-  <div>Price: £<div class="d-inline-block" id="total-price"<%= @pet.price%>><%= @pet.price %></div> </div>
+  <%= f.input :price, as: :float, html5: true,
+              input_html: { class: "d-none" } %>
+  <div>: £<div class="d-inline-block" id="total-price"<%= @pet.price%>><%= @pet.price %></div> </div>
   </div>
   <%= f.submit "Submit Request", class: "btn btn-primary" %>
 <%end%>

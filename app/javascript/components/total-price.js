@@ -20,6 +20,7 @@ const calculatePrice = () => {
     let price = originalPrice * days;
     if (price > 0 ){
       document.querySelector('#total-price').innerText = (Math.round(price * 100) / 100).toString();
+      document.getElementById("booking_price").value = (Math.round(price * 100) / 100).toString()
     } else {
       alert("Your end date cannot be prior to your start date ");
     }
@@ -31,7 +32,7 @@ const calculatePrice = () => {
   days = (endSeconds - startSeconds) / 60 / 60 / 24 / 1000;
   let price = originalPrice * days;
   document.querySelector('#total-price').innerText = (Math.round(price * 100) / 100).toString();
-
+  document.getElementById("booking_price").value = (Math.round(price * 100) / 100).toString()
   });
 };
 

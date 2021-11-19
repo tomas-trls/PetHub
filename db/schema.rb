@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2021_11_19_112933) do
     t.bigint "pet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "bookingStatus", default: "pending"
+    t.float "price"
     t.index ["pet_id"], name: "index_bookings_on_pet_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
