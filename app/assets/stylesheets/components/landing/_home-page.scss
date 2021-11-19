@@ -3,13 +3,19 @@
   background-image: url("Home-not-Signed-in.svg");
   background-repeat: no-repeat;
   height: 100vh;
+  position: relative;
+  top: -100px;
+  z-index: -2;
 }
 
 .background-building-signed {
-    width:1150px;
-    background-image: url("Home-after-Signed-in.svg");
-    background-repeat: no-repeat;
-    height: 100vh;
+  width:1150px;
+  background-image: url("Home-after-Signed-in.svg");
+  background-repeat: no-repeat;
+  height: 90vh;
+  position: relative;
+  top: -100px;
+  z-index: -2;
 }
 
 .aboutus {
@@ -17,7 +23,7 @@
   width: 77px;
   height: 177.16px;
   left: 182px;
-  top: 312px;
+  top: 212px;
 
   /* yellow */
 
@@ -33,7 +39,7 @@
   width: 147px;
   height: 242px;
   left: 308px;
-  top: 337px;
+  top: 237px;
 
   /* yellow */
 
@@ -48,8 +54,7 @@
   width: 145px;
   height: 129px;
   left: 490px;
-  top: 341px;
-
+  top: 241px;
   /* yellow */
 
   //background: blue;
@@ -62,14 +67,14 @@ position: absolute;
 width: 220px;
 height: 320px;
 left: 745px;
-top: 275px;
+top: 175px;
 border-radius: 55px 55px 0 0;
 }
 //CLOCK
 
 .clock-block {
   position: absolute;
-  top: 197px;
+  top: 97px;
   left: 816px;
   display: flex;
   align-items: center;
