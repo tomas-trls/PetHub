@@ -17,7 +17,7 @@
       <hr>
       <div class="d-flex justify-content-around">
       <%= link_to "Edit", edit_booking_path(booking), class: "card-link text-warning " %>
-      <%= link_to "More Info", my_booking_path(booking), class: "card-link text-info" %>
+      <%= link_to "More Info", pet_path(booking.pet), class: "card-link text-info" %>
       <%= link_to "Delete", booking_path(booking), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "text-danger card-link"%>
       </div>
       </div>
