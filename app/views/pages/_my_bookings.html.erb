@@ -12,7 +12,7 @@
       <%= cl_image_tag booking.pet.photo.key, height: 300, width: 400, crop: :fill, class: "pet-card-image" %>
       <div class="card-body">
         <h2 class="card-title text-center">Start Date: <%= booking.start_date.strftime("%d-%m-%Y")%></h2>
-        <h2 class="card-title text-center">End Date: <%= booking.end_date.strftime("%d-%m-%Y")%></h2>
+        <h2 class="card-title text-center">End Date: <%= booking.end_date.strftime(git "%d-%m-%Y")%></h2>
         <p class="card-text mt-2 text-center mb-0">Booking request has been made for <%= booking.pet.name%></p>
       <hr>
       <div class="d-flex justify-content-around">
