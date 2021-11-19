@@ -47,6 +47,18 @@ class BookingsController < ApplicationController
     redirect_to pet_path(@booking.pet)
   end
 
+  def owner_confirm
+    @booking = Booking.find(params[:id])
+    @booking.update(owner_confirmation: true)
+    redirect_to pet_path(@booking.pet)
+  end
+
+  def sitter_confirm
+    @booking = Booking.find(params[:id])
+    @booking.update(bookingStatus: true)
+    redirect_to pet_path(@booking.pet)
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
@@ -71,7 +83,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :price)
   end
 
 end

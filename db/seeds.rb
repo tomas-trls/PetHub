@@ -106,6 +106,7 @@ user.save!
   pet.species = pet_breeds[pet_counter]
   pet.breed = Faker::Ancient.titan
   pet.age = rand(1..10)
+  pet.price = rand(100.0..200.0).round(2)
   pet.address = "Buckingham Palace, london"
   pet.description = "I love to eat and catch up on my beauty sleep"
   pet_file = URI.open((pet_url + pet_filenames[pet_counter]).to_s)
@@ -125,6 +126,7 @@ booking = Booking.new
 booking.start_date = Date.today
 booking.end_date = Date.today
 booking.pet = User.last.pets[0]
+booking.price = (booking.end_date - booking.start_date + 1) * booking.pet.price
 booking.user = User.first
 booking.save!
 
@@ -133,6 +135,7 @@ booking = Booking.new
 booking.start_date = Date.today
 booking.end_date = Date.today
 booking.pet = User.all[3].pets[2]
+booking.price = (booking.end_date - booking.start_date + 1) * booking.pet.price
 booking.user = User.last
 booking.save!
 
@@ -141,6 +144,7 @@ booking = Booking.new
 booking.start_date = Date.today
 booking.end_date = booking.start_date.advance(days: 10)
 booking.pet = User.all[3].pets[2]
+booking.price = (booking.end_date - booking.start_date + 1) * booking.pet.price
 booking.user = User.last
 booking.save!
 
@@ -152,6 +156,7 @@ booking = Booking.new
 booking.start_date = Date.today + 3
 booking.end_date = Date.today + 5
 booking.pet = User.last.pets[1]
+booking.price = (booking.end_date - booking.start_date + 1) * booking.pet.price
 booking.user = User.first
 booking.bookingStatus = "accepted"
 booking.save!
@@ -161,6 +166,7 @@ booking = Booking.new
 booking.start_date = Date.today + 2
 booking.end_date = Date.today + 6
 booking.pet = User.all[3].pets[3]
+booking.price = (booking.end_date - booking.start_date + 1) * booking.pet.price
 booking.user = User.last
 booking.bookingStatus = "accepted"
 booking.save!
@@ -173,6 +179,7 @@ booking = Booking.new
 booking.start_date = Date.today + 3
 booking.end_date = booking.start_date + 10
 booking.pet = User.last.pets[2]
+booking.price = (booking.end_date - booking.start_date + 1) * booking.pet.price
 booking.user = User.first
 booking.bookingStatus = "cancelled"
 booking.save!
@@ -182,6 +189,7 @@ booking = Booking.new
 booking.start_date = Date.today + 5
 booking.end_date = booking.start_date + 8
 booking.pet = User.all[3].pets[3]
+booking.price = (booking.end_date - booking.start_date + 1) * booking.pet.price
 booking.user = User.last
 booking.bookingStatus = "cancelled"
 booking.save!
@@ -194,6 +202,7 @@ booking = Booking.new
 booking.start_date = Date.today - 10
 booking.end_date = Date.today - 8
 booking.pet = User.last.pets[3]
+booking.price = (booking.end_date - booking.start_date + 1) * booking.pet.price
 booking.user = User.first
 booking.bookingStatus = "accepted"
 booking.owner_confirmation = true
@@ -205,6 +214,7 @@ booking = Booking.new
 booking.start_date = Date.today - 6
 booking.end_date = Date.today - 4
 booking.pet = User.all[3].pets[3]
+booking.price = (booking.end_date - booking.start_date + 1) * booking.pet.price
 booking.user = User.last
 booking.bookingStatus = "accepted"
 booking.owner_confirmation = true
