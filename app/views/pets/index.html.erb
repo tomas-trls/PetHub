@@ -6,7 +6,7 @@
 <div class="container d-flex">
   <div class="cards">
     <% @pets.each do |pet| %>
-      <div class="card-category">
+      <div class="card-category mr-2">
         <%= link_to pet_path(pet) do %>
         <div class="card-trip">
           <% if pet.photo.attached? %>
