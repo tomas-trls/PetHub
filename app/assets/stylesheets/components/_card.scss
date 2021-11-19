@@ -70,7 +70,7 @@
   height: 500px;
   position: relative;
   margin-right: 100px;
-}
+
 
 .fancy-card {
   position: absolute;
@@ -84,16 +84,13 @@
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   transition: 0.5s;
-
+}
 
   .fancy-card-image {
-    position: absolute;
-    top: 0px;
-    left: 00px;
+
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: #000;
     transition: .5s;
   }
 
@@ -102,7 +99,7 @@
     width: 100%;
     height: 100%;
     background-color: $white-pink;
-    background-position: center;
+
   }
 
   &:hover img {
@@ -237,13 +234,16 @@
 .card-product {
   overflow: hidden;
   height: 120px;
-  background: white;
+  background: $white-pink;
+  border: 1px solid $red;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin: 20px;
   transition: all .2s ease-in-out;
   border-radius: 8px;
+  color: $red;
+  font-family: 'Henriette';
 }
 
 .card-product:hover {
@@ -252,12 +252,14 @@
 
 .card-product .icon-box {
   padding: 8px 0 8px 24px;
+  color: black;
 }
 
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  font-family: 'Henriette';
 }
 
 .card-product p {
@@ -270,6 +272,7 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  width: 100%;
 }
 
 .pet-details-cards {
